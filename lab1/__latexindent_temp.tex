@@ -1,16 +1,17 @@
 \documentclass{article}
+
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{tikz-cd}
 \usepackage{amsmath}
-
 \geometry{a4paper,scale=0.8}
-
-\begin{document}
 \title{Lab 1: Modeling Packet Losses}
 \author{Zhipeng Ye}
+\begin{document}
+
 \maketitle
     \section{Hidden Markov Model}
+    \paragraph{}
     Gilbert-Elliott Model is packet loss model which is based on two-state Hidden Markov Model.
     In other words, Gilbert-Elliott Model is a simply version of Hidden Markov Model. 
     Therefore, It's necessary to learn more about Hidden Markov Model to understand Gilbert-Elliott Model completely.
@@ -35,7 +36,15 @@
         \caption{Hidden Markov Model}
         \label{fig:ch5:jointentropy}
     \end{figure}
-       
+    \paragraph{}
+    Hidden Markov Model introduce two random variable - Latent state and Observations. Latent state is a variable that we can't see.
+    Observations is a variable that we can observe at the experiment.
+    Furtheremore, HMM also has three parameters - initial probability vector $\pi$, transition probability matrix $A$,
+    emission probability matrix $B$. So if we can compute three parameters $\{A,B,\pi\}$, we will reconstruct HMM.
+    Researchers have developed numerous approaches to estimate parameters of Hidden Markov Model (HMM) such as Forward/Backward Algorithm.
+    \paragraph{}
+    Markov Model simplifies the Hidden Markov Model (HMM). It only uses two parameters $\{A,\pi\}$ and removes the Latent state. Maximum likelihood estimation (MLE) is a good way to 
+    estimate these parameters. The relationship between Hidden Markov Model and Markov Model is similar to the relation between Gilbert-Elliott Model (GM) and Simple Gilbert-Elliott Model (SGM). Section two of this article will demonstrate the reason. 
     \section{Gilbert-Elliott Model}
     \begin{figure}[ht]
         \centering
