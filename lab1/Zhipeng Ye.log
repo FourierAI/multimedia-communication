@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.24)  4 APR 2020 23:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.24)  5 APR 2020 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -334,23 +334,38 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@Maxaffil=\count124
 \c@authors=\count125
 \c@affil=\count126
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen172
+\captionmargin@=\dimen173
+\captionwidth=\dimen174
+\caption@tempdima=\dimen175
+\caption@indent=\dimen176
+\caption@parindent=\dimen177
+\caption@hangindent=\dimen178
+)
+\c@caption@flags=\count127
+\c@ContinuedFloat=\count128
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count127
+\lst@mode=\count129
 \lst@gtempboxa=\box40
 \lst@token=\toks33
-\lst@length=\count128
-\lst@currlwidth=\dimen172
-\lst@column=\count129
-\lst@pos=\count130
-\lst@lostspace=\dimen173
-\lst@width=\dimen174
-\lst@newlines=\count131
-\lst@lineno=\count132
-\lst@maxwidth=\dimen175
+\lst@length=\count130
+\lst@currlwidth=\dimen179
+\lst@column=\count131
+\lst@pos=\count132
+\lst@lostspace=\dimen180
+\lst@width=\dimen181
+\lst@newlines=\count133
+\lst@lineno=\count134
+\lst@maxwidth=\dimen182
  (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
-\c@lstnumber=\count133
-\lst@skipnumbers=\count134
+\c@lstnumber=\count135
+\lst@skipnumbers=\count136
 \lst@framebox=\box41
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/02/27 1.8b listings configuration
@@ -359,30 +374,30 @@ Package: listings 2019/02/27 1.8b (Carsten Heinz)
  (./Zhipeng Ye.aux)
 \openout1 = `"Zhipeng Ye.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
  (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
-\scratchdimen=\dimen176
+\scratchcounter=\count137
+\scratchdimen=\dimen183
 \scratchbox=\box42
-\nofMPsegments=\count136
-\nofMParguments=\count137
+\nofMPsegments=\count138
+\nofMParguments=\count139
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count138
-\MPscratchDim=\dimen177
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
+\MPscratchCnt=\count140
+\MPscratchDim=\dimen184
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
 \everyMPtoPDFconversion=\toks35
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -452,38 +467,77 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count141
-LaTeX Font Info:    Try loading font information for U+msa on input line 57.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count143
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <figure1.png, id=4, 608.2725pt x 171.64125pt>
 File: figure1.png Graphic file (type png)
 <use figure1.png>
-Package pdftex.def Info: figure1.png  used on input line 88.
+Package pdftex.def Info: figure1.png  used on input line 91.
 (pdftex.def)             Requested size: 304.13551pt x 85.8204pt.
  [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./figure1.png>] [3] (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./figure1.png>] [3]
+<Histogram_of_zero_run_length_for_given_data.png, id=34, 462.528pt x 346.896pt>
+File: Histogram_of_zero_run_length_for_given_data.png Graphic file (type png)
+<use Histogram_of_zero_run_length_for_given_data.png>
+Package pdftex.def Info: Histogram_of_zero_run_length_for_given_data.png  used on input line 199.
+(pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
+<Histogram_of_zero_run_length_for_generated_data.png, id=35, 462.528pt x 346.896pt>
+File: Histogram_of_zero_run_length_for_generated_data.png Graphic file (type png)
+<use Histogram_of_zero_run_length_for_generated_data.png>
+Package pdftex.def Info: Histogram_of_zero_run_length_for_generated_data.png  used on input line 204.
+(pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
+<Histogram_of_one_run_length_for_given_data.png, id=36, 462.528pt x 346.896pt>
+File: Histogram_of_one_run_length_for_given_data.png Graphic file (type png)
+<use Histogram_of_one_run_length_for_given_data.png>
+Package pdftex.def Info: Histogram_of_one_run_length_for_given_data.png  used on input line 212.
+(pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
+<Histogram_of_one_run_length_for_generated_data.png, id=37, 462.528pt x 346.896pt>
+File: Histogram_of_one_run_length_for_generated_data.png Graphic file (type png)
+<use Histogram_of_one_run_length_for_generated_data.png>
+Package pdftex.def Info: Histogram_of_one_run_length_for_generated_data.png  used on input line 217.
+(pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
+<packet_loss_run_length_possibility_density.png, id=38, 462.528pt x 346.896pt>
+File: packet_loss_run_length_possibility_density.png Graphic file (type png)
+<use packet_loss_run_length_possibility_density.png>
+Package pdftex.def Info: packet_loss_run_length_possibility_density.png  used on input line 227.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+<PSD_of_run_length_for_given_data.png, id=39, 462.528pt x 346.896pt>
+File: PSD_of_run_length_for_given_data.png Graphic file (type png)
+<use PSD_of_run_length_for_given_data.png>
+Package pdftex.def Info: PSD_of_run_length_for_given_data.png  used on input line 240.
+(pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
+<PSD_of_run_length_for_generated_data.png, id=40, 462.528pt x 346.896pt>
+File: PSD_of_run_length_for_generated_data.png Graphic file (type png)
+<use PSD_of_run_length_for_generated_data.png>
+Package pdftex.def Info: PSD_of_run_length_for_generated_data.png  used on input line 245.
+(pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
+ [4 <./Histogram_of_zero_run_length_for_given_data.png> <./Histogram_of_zero_run_length_for_generated_data.png> <./Histogram_of_one_run_length_for_given_data.png> <./Histogram_of_one_run_length_for_generated_data.png>] (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
-) [4] [5] [6] (./Zhipeng Ye.aux) ) 
+) [5 <./packet_loss_run_length_possibility_density.png> <./PSD_of_run_length_for_given_data.png> <./PSD_of_run_length_for_generated_data.png>] [6] [7] [8] [9] [10] (./Zhipeng Ye.aux) ) 
 Here is how much of TeX's memory you used:
- 15920 strings out of 492616
- 312670 string characters out of 6129481
- 714957 words of memory out of 5000000
- 19537 multiletter control sequences out of 15000+600000
- 13547 words of font info for 50 fonts, out of 8000000 for 9000
+ 17106 strings out of 492616
+ 334876 string characters out of 6129481
+ 750176 words of memory out of 5000000
+ 20709 multiletter control sequences out of 15000+600000
+ 13906 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,18n,84p,545b,1803s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Zhipeng Ye.pdf" (6 pages, 231426 bytes).
+ 61i,18n,84p,545b,1847s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "Zhipeng Ye.pdf" (10 pages, 374358 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
