@@ -136,11 +136,11 @@ $n_{10}$ means the times 0 follows 1 . $n_{01}$ means the times 1 follows 0. $n_
 Gilbert applied a method to decide the parameters of GM \cite{Gilbert Model}.
 Firstly, the parameters of ${p,q,h}$ can be estimated from another parameters of ${a,b,c}$. 
 The expression equation of ${a,b,c}$ is as follow:
-\begin{equation}
+\begin{equation}\label{abc}
     a=P(1), b=P(1 | 1), c=\frac{P(111)}{P(101)+P(111)}
 \end{equation}
 Finally, we can get parameters of Gilbert Model by the following relation between these variables.
-\begin{equation}
+\begin{equation}\label{pqh}
     1-q=\frac{a c-b^{2}}{2 a c-b(a+c)}, h=1-\frac{b}{1-q}, p=\frac{a q}{1-h-a}
 \end{equation}
 
@@ -191,18 +191,17 @@ Here is the shell command:
     0.14727215389467044,0.7449425915800985
 \end{verbatim}
 Next, I compare the histogram and power spectrum density between given data and generated data. The plot script can be seen in the appendix \ref{PLTSGM}.
-\newpage
 \begin{figure}[htbp]
     \centering
     \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=6cm]{Histogram_of_zero_run_length_for_given_data.png}
-    \caption{zero length for given data}
+    \caption{SGM zero length for given data}
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=6cm]{Histogram_of_zero_run_length_for_generated_data.png}
-    \caption{zero length for generated data}
+    \caption{SGM zero length for generated data}
     \end{minipage}
 \end{figure}
 \begin{figure}[htbp]
@@ -210,54 +209,168 @@ Next, I compare the histogram and power spectrum density between given data and 
     \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=6cm]{Histogram_of_one_run_length_for_given_data.png}
-    \caption{one length for given data}
+    \caption{SGM one length for given data}
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=6cm]{Histogram_of_one_run_length_for_generated_data.png}
-    \caption{one length for generated data}
+    \caption{SGM one length for generated data}
     \end{minipage}
 \end{figure}
 As we can see from the pictures, the given data is similar to the generated data, because random variable \textbf{\emph{submit the same stochastic process}}. 
 Interestingly, the whole process of parameters estimation \textbf{is similar to the learning process in Machine learning} and Hidden Markov Model is a significant model of Machine learning.
 In addition, we have known the distribution of loss run length from equation \ref{distributionofSGM}. 
 Therefore we can generate theoretical curve. 
-\begin{figure}[ht]
+\begin{figure}[htb]
     \centering
     \includegraphics[scale = 0.6]{packet_loss_run_length_possibility_density.png}
-    \caption{packet loss run length theoretical possibility density.png}
+    \caption{SGM packet loss run length theoretical possibility density}
     \label{SGMTD}
 \end{figure}
-From figure \ref{SGMTD}, we can learn that the one length histogram submit to the theoretical cure.
+\textbf{From figure \ref{SGMTD}}, we can learn that the one length histogram submit to the theoretical cure.
 The script for generate theoretical curve is attached at appendix \ref{TSPLC}.
+\paragraph{}
 Furtheremore, I compare the power spectrum density PSD for given sequence and generated sequence.
-we can see from Figure 8 and Figure 9, they have similar distribution.
+we can see from \textbf{Figure 8} and \textbf{Figure 9}, they have similar distribution.
 In general, the estimated parameters is correct.
 \begin{figure}[htbp]
     \centering
     \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=6cm]{PSD_of_run_length_for_given_data.png}
-    \caption{PSD of given data}
+    \caption{SGM PSD of given data}
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=6cm]{PSD_of_run_length_for_generated_data.png}
-    \caption{PSD of generated data}
+    \caption{SGM PSD of generated data}
     \end{minipage}
 \end{figure}
+\clearpage
 \subsection{Gilbert Model (GM)}
+Gilbert Model has one more parameters $H$ than Simple Gilbert Model (SGM). Therefore following steps must be around parameter $H$.
 \subsubsection{Construct model}
+The script and detailed comments for Constructing Gilbert Model is attached at the appendix \ref{CGM}.  The main implement is here:
+\begin{lstlisting}[language=Python]
+    for i in range(len):
+    # if the random sequence is large than the transition probability
+    # we must change the state for example 0 -> 1 or 1 -> 0
+    if statechange[i] > tr[state, state]:
+        # transition into the other state
+        state ^= 1
+    # if latent state is 1 (Bad state), we must consider the emission probability to
+    # generate sequence
+    if state == 1:
+        randomvalue = random.random()
+        if randomvalue <= emission_probability:
+            loss_state = 1
 
+    # add a binary value to output
+    seq[i] = loss_state
+
+    loss_state = 0
+\end{lstlisting}
+To create Gilbert Model, I introduce loss state to consider emission probability. if the random value is large than $1-H$, the Bad state will cause packet loss.
 \subsubsection{Estimate model parameters}
-
-
+To determine the parameters of $a,b,c$ and $p,q,h$, I write the script to estimated them at appendix \ref{EGM}.
+According to equation \ref{abc} and \ref{pqh}, we can get these parameters of Gilbert Model.
+Finally, I obtain the parameters of Gilbert Model.
+\begin{equation}
+    \begin{array}{lr}
+        a=0.3658,
+        b=0.7446692181519955,
+        c=0.9301369863013699\\
+        p=0.1449793136870664,
+        q=0.2469390489546801,
+        h=0.01114349759030242
+    \end{array}
+\end{equation}
+The steady vector $\boldsymbol{\pi}$:
+\begin{equation}
+    \pi_G = \frac{q}{p+q} = 0.6300777725498095, \pi_B = \frac{p}{p+q} = 0.36992222745019054
+\end{equation}
+Packet loss probability $p_L$ as follows:
+\begin{equation}
+    p_L = (1-h)\pi_B = 0.3658
+\end{equation}
+The probability distribution of loss run length has a geometric distribution:
+\begin{equation}
+    \begin{array}{lr}
+        p_{k} =(1-q)^{k-1}(1-h)^{k-1}[1-(1-q)(1-h)] 
+        \\=0.7530609510453199 ^{k-1}*0.9888565024096976^{k-1}*0.2553307818480045
+        \\= 0.2553307818480045 * 0.7446692181519955^{k-1}
+        \text { for } k=1,2, \ldots, \infty \label{distributionofSGM}
+    \end{array}
+\end{equation}
 \subsubsection{Comparison and discussion}
-\newpage
+Based on the parameters we observed, I run the SGM script to generate the sequence which has the same length as the supplied sequence.
+Here is the shell command:
+\begin{verbatim}
+    python gm_generate.py -L 10000 -T 0.8550206863129336,0.2469390489546801,
+    0.1449793136870664,0.7530609510453199 -H 0.01114349759030242
+\end{verbatim}
+Next, I compare the histogram and power spectrum density between given data and generated data. The plot script can be seen in the appendix \ref{PLTGM}.
+As we can see from the Figure 10 - 13, the given data is \textbf{similar} to the generated data. 
+Furtheremore, GM has a \textbf{better performance to simulate the given data than SGM}, when we compare GM histogram and SGM histogram.
+In my opinion, Maybe GM has one more parameters $H$ which can improve the performance of model.
+\textbf{This concept can be easily seen in Machine learning and Deep learning}. To some extent, \emph{the more parameters we consider in the model, the better the model fit the training set}.
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=6cm]{GM_Histogram_of_zero_run_length_for_given_data.png}
+    \caption{GM zero length for given data}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=6cm]{GM_Histogram_of_zero_run_length_for_generated_data.png}
+    \caption{GM zero length for generated data}
+    \end{minipage}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=6cm]{GM_Histogram_of_one_run_length_for_given_data.png}
+    \caption{GM one length for given data}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=6cm]{GM_Histogram_of_one_run_length_for_generated_data.png}
+    \caption{GM one length for generated data}
+    \end{minipage}
+\end{figure}
+Furtheremore, based on the theoretical packet loss distribution, I write script to plot the theoretical curve.
+The  script  for  generate  theoreticalcurve is attached at appendix \ref{TPLC}.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale = 0.6]{GM_packet_loss_run_length_possibility_density.png}
+    \caption{SGM packet loss run length theoretical possibility density}
+    \label{GMTD}
+\end{figure}
+\textbf{From figure \ref{GMTD}}, we can learn that the one length histogram submit to the theoretical cure.
+\paragraph{}
+Furtheremore, I compare the power spectrum density PSD for given sequence and generated sequence.
+we can see from \textbf{Figure 15} and \textbf{Figure 16}, they have similar distribution.
+In general, the estimated parameters is correct.
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=6cm]{GM_PSD_of_run_length_for_given_data.png}
+    \caption{GM PSD of given data}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=6cm]{GM_PSD_of_run_length_for_generated_data.png}
+    \caption{GM PSD of generated data}
+    \end{minipage}
+\end{figure}
+\clearpage
 \appendix{\textbf{Detailed Python Script Appendix}}
 \section{Construct Simple Gilbert Model (SGM)} \label{CSGM}
 \begin{lstlisting}[language=Python]
-    #!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 ##
 # @file     sgm_generate.py
@@ -474,11 +587,269 @@ plt.savefig("packet_loss_run_length_possibility_density")
 plt.show()
 
 \end{lstlisting}
+\section{Construct Gilbert Model (GM)}\label{CGM}
+\begin{lstlisting}[language=Python]
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+##
+# @file     sgm_generate.py
+# @author   Kyeong Soo (Joseph) Kim <kyeongsoo.kim@gmail.com>
+# @date     2020-03-25
+#
+# @brief    A function for generating loss pattern based on simple Guilbert model.
+#
+
+import numpy as np
+import sys
+import json
+import random
+
+def gm_generate(len, tr, emission_probability):
+    """
+    Generates a binary sequence of 0 (GOOD) and 1 (BAD) of length
+    len from an SGM specified by a 2x2 transition probability matrix
+    tr; tr[i, j] is the probability of transition from state i to
+    state j.
+
+    This function always starts the model in GOOD (0) state.
+
+    Examples:
+
+    import numpy as np
+
+    tr = np.array([[0.95, 0.10],
+                   [0.05, 0.90]])
+    seq = sgm_generate(100, tr)
+    """
+
+    seq = np.zeros(len)
+
+    # tr must be 2x2 matrix
+    tr = np.asarray(tr)  # make sure seq is numpy 2D array
+    if tr.shape != (2, 2):
+        sys.exit("size of transition matrix is not 2x2")
+
+    # create a random sequence for state changes
+    statechange = np.random.rand(len)
+
+    # Assume that we start in GOOD state (0).
+    state = 0
+    loss_state = 0
+
+    # main loop
+    for i in range(len):
+        # if the random sequence is large than the transition probability
+        # we must change the state for example 0 -> 1 or 1 -> 0
+        if statechange[i] > tr[state, state]:
+            # transition into the other state
+            state ^= 1
+        # if latent state is 1 (Bad state), we must consider the emission probability to
+        # generate sequence
+        if state == 1:
+            randomvalue = random.random()
+            if randomvalue <= emission_probability:
+                loss_state = 1
+
+        # add a binary value to output
+        seq[i] = loss_state
+
+        loss_state = 0
+
+    return seq
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-L",
+        "--length",
+        help="the length of the loss pattern to be generated; default is 10",
+        default=10,
+        type=int)
+    parser.add_argument(
+        "-H",
+        "--H",
+        help="emission probability; default is 0.0",
+        default=0.0,
+        type=float)
+    parser.add_argument(
+        "-T",
+        "--transition",
+        help="transition matrix in row-major order; default is \"0.95,0.10,0.05,0.90\"",
+        default="0.95,0.10,0.05,0.90",
+        type=str)
+    args = parser.parse_args()
+    len = args.length
+    emission_probability = 1 - args.H
+    tr = np.reshape(np.fromstring(args.transition, sep=','), (2, 2))
+    seq = gm_generate(len, tr, emission_probability).tolist()
+
+    with open('gmseq.out','w') as file:
+        json.dump(seq,file)
+
+\end{lstlisting}
+\section{Estimate Gilbert Model}\label{EGM}
+\begin{lstlisting}[language=Python]
+#!/usr/bin/env python
+# encoding: utf-8
+
+# @author: Zhipeng Ye
+# @contact: Zhipeng.ye19@xjtlu.edu.cn
+# @file: estimateGMparams.py
+# @time: 2020-04-06 14:12
+# @desc:
+import scipy.io as sio
+import numpy as np
+
+if __name__ == "__main__":
+    matfile = sio.loadmat('loss_seq.mat')
+    binary_seq = matfile['seq'][0].tolist()
+    length_seq = len(binary_seq)
+
+    n1 = np.count_nonzero(binary_seq)
+
+    p1 = n1 / length_seq
+    a = p1
+
+    n11 = 0
+    for index in range(length_seq - 1):
+        if binary_seq[index:index + 2] == [1, 1]:
+            n11 += 1
+
+    p11 = n11 / length_seq
+    b = p11 / p1
+
+    n111 = 0
+    n101 = 0
+    for index in range(length_seq - 2):
+        if binary_seq[index:index + 3] == [1, 1, 1]:
+            n111 += 1
+        if binary_seq[index:index + 3] == [1, 0, 1]:
+            n101 += 1
+
+    p111 = n111 / length_seq
+    p101 = n101 / length_seq
+
+    c = p111 / (p111 + p101)
+
+    q = 1 - (a * c - b ** 2) / (2 * a * c - b * (a + c))
+
+    h = 1 - b / (1 - q)
+
+    p = (a * q) / (1 - h - a)
+
+    print("a:{},b:{},c:{}".format(a, b, c))
+    print("p:{},q:{},h:{}".format(p, q, h))
+
+\end{lstlisting}
+\section{Plot Histogram and PSD of GM}\label{PLTGM}
+\begin{lstlisting}[language=Python] 
+
+# !/usr/bin/env python
+# encoding: utf-8
+
+# @author: Zhipeng Ye
+# @contact: Zhipeng.ye19@xjtlu.edu.cn
+# @file: GMHitPSD.py
+# @time: 2020-04-03 14:16
+# @desc:
+import scipy.io as sio
+import binary_runlengths as brl
+import numpy as np
+import matplotlib.pyplot as plt
+import json
+from scipy import signal
+
+if __name__ == '__main__':
+    mat_contents = sio.loadmat('loss_seq.mat')
+    binary_seq = mat_contents['seq']
+
+    given_zerorl, given_onerl = brl.binary_runlengths(binary_seq)
+
+    # plot histogram
+    plt.hist(given_zerorl, normed=True)
+    plt.title("Histogram of zero run length for given data")
+    plt.xlabel("run length")
+    plt.ylabel('frequency')
+    plt.savefig('GM_Histogram_of_zero_run_length_for_given_data')
+    plt.show()
+
+    plt.hist(given_onerl, normed=True)
+    plt.title("Histogram of one run length for given data")
+    plt.xlabel("run length")
+    plt.ylabel('frequency')
+    plt.savefig('GM_Histogram_of_one_run_length_for_given_data')
+    plt.show()
+
+    with open('gmseq.out') as file:
+        generated_data = json.load(file)
+
+    generated_zerorl, generated_onerl = brl.binary_runlengths(generated_data)
+
+    # plot histogram
+    plt.hist(generated_zerorl, normed=True)
+    plt.title("Histogram of zero run length for generated data")
+    plt.xlabel("run length")
+    plt.ylabel('frequency')
+    plt.savefig('GM_Histogram_of_zero_run_length_for_generated_data')
+    plt.show()
+    plt.hist(generated_onerl, normed=True)
+    plt.title("Histogram of one run length for generated data")
+    plt.xlabel("run length")
+    plt.ylabel('frequency')
+    plt.savefig('GM_Histogram_of_one_run_length_for_generated_data')
+    plt.show()
+
+    frequency_given, psd_given = signal.welch(binary_seq[0])
+    plt.semilogy(frequency_given, psd_given)
+    plt.title("PSD of run length for given data")
+    plt.xlabel("frequency [Hz]")
+    plt.ylabel('PSD [V**2/Hz]')
+    plt.savefig("GM_PSD_of_run_length_for_given_data")
+    plt.show()
+
+    frequency_generated, psd_generated = signal.welch(generated_data)
+    plt.semilogy(frequency_generated, psd_generated)
+    plt.title("PSD_of_run_length_for_generated_data")
+    plt.xlabel("frequency [Hz]")
+    plt.ylabel('PSD [V**2/Hz]')
+    plt.savefig("GM_PSD_of_run_length_for_generated_data")
+    plt.show()
+\end{lstlisting}
+\section{Plot Theoretical GM Packet Loss Curve}\label{TPLC}
+\begin{lstlisting}[language=Python]
+    #!/usr/bin/env python
+# encoding: utf-8
+
+# @author: Zhipeng Ye
+# @contact: Zhipeng.ye19@xjtlu.edu.cn
+# @file: generateGMtheoreticalcurve.py
+# @time: 2020-04-06 21:30
+# @desc:
+
+import matplotlib.pyplot as plt
+
+k = 50
+
+x = [i for i in range(k)]
+seq = [0.2553307818480045*0.7446692181519955**(i) for i in range(k)]
+plt.plot(x,seq)
+plt.title('packet loss run length possibility density')
+plt.xlabel('run length')
+plt.ylabel('possibility')
+plt.savefig("GM_packet_loss_run_length_possibility_density")
+plt.show()
+
+\end{lstlisting}
 \newpage
 \begin{thebibliography}{9}
 \bibitem{Gilbert Model} 
 E. N. Gilbert, “Capacity of a burst-noise channel,” Bell System Technical Journal, vol. 39, no. 5, pp. 1253–1265, Sep. 1960.
 \end{thebibliography}
+
+
 
 
 
