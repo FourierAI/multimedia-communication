@@ -84,7 +84,10 @@
     Markov Model simplifies the Hidden Markov Model (HMM). It only uses two parameters $\{A,\pi\}$ and removes the Latent state. Maximum likelihood estimation (MLE) is a good way to 
     estimate these parameters. The relationship between Hidden Markov Model and Markov Model is similar to the relation between Gilbert-Elliott Model (GM) and Simple Gilbert-Elliott Model (SGM). Section two of this article will demonstrate the reason. 
     \section{Gilbert-Elliott Model}
-    \paragraph{}Gilbert-Elliott Model resembles Hidden Markov Model. To be specific, Gilbert-Elliott Model has two state - $\{Good, Bad\}$ , transition matrix $\boldsymbol{P}=\left[\begin{array}{cc}(1-p) & q \\ p & (1-q)\end{array}\right]$ and emission probability vector $\left[\begin{array}{cc}1-k&1-h\end{array}\right]^T$.
+    \paragraph{}Gilbert-Elliott Model resembles Hidden Markov Model. 
+To be specific, Gilbert-Elliott Model has two state - $\{Good, Bad\}$ , 
+transition matrix $\boldsymbol{P}=\left[\begin{array}{cc}(1-p) & q \\ p & (1-q)\end{array}\right]$ and 
+emission probability vector $\left[\begin{array}{cc}1-k&1-h\end{array}\right]^T$.
     \paragraph{}
         \begin{figure}[ht]
         \centering
@@ -150,7 +153,7 @@ In this experiment, we simulate the Simple Gilbert Model (SGM) and Gilbert Model
 \subsubsection{Construct model}
 The script and detailed comments for Constructing Simple Gilbert Model is attached at the appendix \ref{CSGM}.
 The main implement is here.
-\begin{verbatim}
+\begin{lstlisting}[language=Python]
 # main loop
 for i in range(len):
     # if the random sequence is large than the transition probability
@@ -160,7 +163,7 @@ for i in range(len):
         state ^= 1
     # add a binary value to output
     seq[i] = state
-\end{verbatim}
+\end{lstlisting}
 As we can see from the code segment, if the sequence[i] is large than the transition probability, the start will flip from $0$ to $1$ or from $1$ to $0$.
 \subsubsection{Estimate model parameters}
 To determine the parameters of $p,q$, I write the script which is in Appendix \ref{ESGM} to count the number of times where binary sequence occurs.
@@ -217,7 +220,7 @@ Next, I compare the histogram and power spectrum density between given data and 
     \caption{SGM one length for generated data}
     \end{minipage}
 \end{figure}
-As we can see from the pictures, the given data is similar to the generated data, because random variable \textbf{\emph{submit the same stochastic process}}. 
+As we can see from the Histogram, \textbf{figure 3-6}, the given data is similar to the generated data, because random variable \textbf{\emph{submit the same stochastic process}}. 
 Interestingly, the whole process of parameters estimation \textbf{is similar to the learning process in Machine learning} and Hidden Markov Model is a significant model of Machine learning.
 In addition, we have known the distribution of loss run length from equation \ref{distributionofSGM}. 
 Therefore we can generate theoretical curve. 
@@ -228,7 +231,7 @@ Therefore we can generate theoretical curve.
     \label{SGMTD}
 \end{figure}
 \textbf{From figure \ref{SGMTD}}, we can learn that the one length histogram submit to the theoretical cure.
-The script for generate theoretical curve is attached at appendix \ref{TSPLC}.
+The script for generating theoretical curve is attached at appendix \ref{TSPLC}.
 \paragraph{}
 Furtheremore, I compare the power spectrum density PSD for given sequence and generated sequence.
 we can see from \textbf{Figure 8} and \textbf{Figure 9}, they have similar distribution.
@@ -248,11 +251,11 @@ In general, the estimated parameters is correct.
 \end{figure}
 \clearpage
 \subsection{Gilbert Model (GM)}
-Gilbert Model has one more parameters $H$ than Simple Gilbert Model (SGM). Therefore following steps must be around parameter $H$.
+Gilbert Model has one more parameters $h$ than Simple Gilbert Model (SGM). Therefore following steps must be around parameter $h$.
 \subsubsection{Construct model}
 The script and detailed comments for Constructing Gilbert Model is attached at the appendix \ref{CGM}.  The main implement is here:
 \begin{lstlisting}[language=Python]
-    for i in range(len):
+for i in range(len):
     # if the random sequence is large than the transition probability
     # we must change the state for example 0 -> 1 or 1 -> 0
     if statechange[i] > tr[state, state]:
@@ -270,7 +273,7 @@ The script and detailed comments for Constructing Gilbert Model is attached at t
 
     loss_state = 0
 \end{lstlisting}
-To create Gilbert Model, I introduce loss state to consider emission probability. if the random value is large than $1-H$, the Bad state will cause packet loss.
+To create Gilbert Model, I introduce loss state to consider emission probability. if the random value is large than $1-h$, the Bad state will cause packet loss.
 \subsubsection{Estimate model parameters}
 To determine the parameters of $a,b,c$ and $p,q,h$, I write the script to estimated them at appendix \ref{EGM}.
 According to equation \ref{abc} and \ref{pqh}, we can get these parameters of Gilbert Model.
@@ -299,11 +302,11 @@ The probability distribution of loss run length has a geometric distribution:
         p_{k} =(1-q)^{k-1}(1-h)^{k-1}[1-(1-q)(1-h)] 
         \\=0.7530609510453199 ^{k-1}*0.9888565024096976^{k-1}*0.2553307818480045
         \\= 0.2553307818480045 * 0.7446692181519955^{k-1}
-        \text { for } k=1,2, \ldots, \infty \label{distributionofSGM}
+        \text { for } k=1,2, \ldots, \infty \label{distributionofGM}
     \end{array}
 \end{equation}
 \subsubsection{Comparison and discussion}
-Based on the parameters we observed, I run the SGM script to generate the sequence which has the same length as the supplied sequence.
+Based on the parameters we observed, I run the GM script to generate the sequence which has the same length as the supplied sequence.
 Here is the shell command:
 \begin{verbatim}
     python gm_generate.py -L 10000 -T 0.8550206863129336,0.2469390489546801,
@@ -312,7 +315,7 @@ Here is the shell command:
 Next, I compare the histogram and power spectrum density between given data and generated data. The plot script can be seen in the appendix \ref{PLTGM}.
 As we can see from the Figure 10 - 13, the given data is \textbf{similar} to the generated data. 
 Furtheremore, GM has a \textbf{better performance to simulate the given data than SGM}, when we compare GM histogram and SGM histogram.
-In my opinion, Maybe GM has one more parameters $H$ which can improve the performance of model.
+In my opinion, Maybe GM has one more parameters $h$ which can improve the performance of model.
 \textbf{This concept can be easily seen in Machine learning and Deep learning}. To some extent, \emph{the more parameters we consider in the model, the better the model fit the training set}.
 \begin{figure}[htbp]
     \centering
@@ -341,11 +344,11 @@ In my opinion, Maybe GM has one more parameters $H$ which can improve the perfor
     \end{minipage}
 \end{figure}
 Furtheremore, based on the theoretical packet loss distribution, I write script to plot the theoretical curve.
-The  script  for  generate  theoreticalcurve is attached at appendix \ref{TPLC}.
+The  script  for  generating  theoreticalcurve is attached at appendix \ref{TPLC}.
 \begin{figure}[htb]
     \centering
     \includegraphics[scale = 0.6]{GM_packet_loss_run_length_possibility_density.png}
-    \caption{SGM packet loss run length theoretical possibility density}
+    \caption{GM packet loss run length theoretical possibility density}
     \label{GMTD}
 \end{figure}
 \textbf{From figure \ref{GMTD}}, we can learn that the one length histogram submit to the theoretical cure.
@@ -452,7 +455,7 @@ if __name__ == "__main__":
 \end{lstlisting}
 \section{Estimate Simple Gilbert Model} \label{ESGM}
 \begin{lstlisting}[language=Python]
-    #!/usr/bin/env python
+#!/usr/bin/env python
 # encoding: utf-8
 
 # @author: Zhipeng Ye
@@ -820,7 +823,7 @@ if __name__ == '__main__':
 \end{lstlisting}
 \section{Plot Theoretical GM Packet Loss Curve}\label{TPLC}
 \begin{lstlisting}[language=Python]
-    #!/usr/bin/env python
+#!/usr/bin/env python
 # encoding: utf-8
 
 # @author: Zhipeng Ye

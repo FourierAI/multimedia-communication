@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.24)  6 APR 2020 22:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.24)  19 APR 2020 00:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -371,11 +371,7 @@ File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 File: listings.cfg 2019/02/27 1.8b listings configuration
 ))
 Package: listings 2019/02/27 1.8b (Carsten Heinz)
- (./Zhipeng Ye.aux
-
-LaTeX Warning: Label `distributionofSGM' multiply defined.
-
-)
+ (./Zhipeng Ye.aux)
 \openout1 = `"Zhipeng Ye.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
@@ -486,74 +482,74 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <figure1.png, id=4, 608.2725pt x 171.64125pt>
 File: figure1.png Graphic file (type png)
 <use figure1.png>
-Package pdftex.def Info: figure1.png  used on input line 91.
+Package pdftex.def Info: figure1.png  used on input line 94.
 (pdftex.def)             Requested size: 304.13551pt x 85.8204pt.
  [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./figure1.png>]
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./figure1.png>] (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
 <Histogram_of_zero_run_length_for_given_data.png, id=30, 462.528pt x 346.896pt>
 File: Histogram_of_zero_run_length_for_given_data.png Graphic file (type png)
 <use Histogram_of_zero_run_length_for_given_data.png>
-Package pdftex.def Info: Histogram_of_zero_run_length_for_given_data.png  used on input line 198.
+Package pdftex.def Info: Histogram_of_zero_run_length_for_given_data.png  used on input line 201.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
 <Histogram_of_zero_run_length_for_generated_data.png, id=31, 462.528pt x 346.896pt>
 File: Histogram_of_zero_run_length_for_generated_data.png Graphic file (type png)
 <use Histogram_of_zero_run_length_for_generated_data.png>
-Package pdftex.def Info: Histogram_of_zero_run_length_for_generated_data.png  used on input line 203.
+Package pdftex.def Info: Histogram_of_zero_run_length_for_generated_data.png  used on input line 206.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
 <Histogram_of_one_run_length_for_given_data.png, id=32, 462.528pt x 346.896pt>
 File: Histogram_of_one_run_length_for_given_data.png Graphic file (type png)
 <use Histogram_of_one_run_length_for_given_data.png>
-Package pdftex.def Info: Histogram_of_one_run_length_for_given_data.png  used on input line 211.
+Package pdftex.def Info: Histogram_of_one_run_length_for_given_data.png  used on input line 214.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
 <Histogram_of_one_run_length_for_generated_data.png, id=33, 462.528pt x 346.896pt>
 File: Histogram_of_one_run_length_for_generated_data.png Graphic file (type png)
 <use Histogram_of_one_run_length_for_generated_data.png>
-Package pdftex.def Info: Histogram_of_one_run_length_for_generated_data.png  used on input line 216.
+Package pdftex.def Info: Histogram_of_one_run_length_for_generated_data.png  used on input line 219.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
 <packet_loss_run_length_possibility_density.png, id=34, 462.528pt x 346.896pt>
 File: packet_loss_run_length_possibility_density.png Graphic file (type png)
 <use packet_loss_run_length_possibility_density.png>
-Package pdftex.def Info: packet_loss_run_length_possibility_density.png  used on input line 226.
+Package pdftex.def Info: packet_loss_run_length_possibility_density.png  used on input line 229.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
  [3]
-<PSD_of_run_length_for_given_data.png, id=39, 462.528pt x 346.896pt>
+<PSD_of_run_length_for_given_data.png, id=40, 462.528pt x 346.896pt>
 File: PSD_of_run_length_for_given_data.png Graphic file (type png)
 <use PSD_of_run_length_for_given_data.png>
-Package pdftex.def Info: PSD_of_run_length_for_given_data.png  used on input line 240.
+Package pdftex.def Info: PSD_of_run_length_for_given_data.png  used on input line 243.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
-<PSD_of_run_length_for_generated_data.png, id=40, 462.528pt x 346.896pt>
+<PSD_of_run_length_for_generated_data.png, id=41, 462.528pt x 346.896pt>
 File: PSD_of_run_length_for_generated_data.png Graphic file (type png)
 <use PSD_of_run_length_for_generated_data.png>
-Package pdftex.def Info: PSD_of_run_length_for_generated_data.png  used on input line 245.
+Package pdftex.def Info: PSD_of_run_length_for_generated_data.png  used on input line 248.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
- [4 <./Histogram_of_zero_run_length_for_given_data.png> <./Histogram_of_zero_run_length_for_generated_data.png> <./Histogram_of_one_run_length_for_given_data.png> <./Histogram_of_one_run_length_for_generated_data.png>] [5 <./packet_loss_run_length_possibility_density.png> <./PSD_of_run_length_for_given_data.png> <./PSD_of_run_length_for_generated_data.png>] (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/02/27 1.8b listings language file
-)
-<GM_Histogram_of_zero_run_length_for_given_data.png, id=55, 462.528pt x 346.896pt>
+ [4 <./Histogram_of_zero_run_length_for_given_data.png> <./Histogram_of_zero_run_length_for_generated_data.png> <./Histogram_of_one_run_length_for_given_data.png> <./Histogram_of_one_run_length_for_generated_data.png>] [5 <./packet_loss_run_length_possibility_density.png> <./PSD_of_run_length_for_given_data.png> <./PSD_of_run_length_for_generated_data.png>]
+<GM_Histogram_of_zero_run_length_for_given_data.png, id=56, 462.528pt x 346.896pt>
 File: GM_Histogram_of_zero_run_length_for_given_data.png Graphic file (type png)
 <use GM_Histogram_of_zero_run_length_for_given_data.png>
-Package pdftex.def Info: GM_Histogram_of_zero_run_length_for_given_data.png  used on input line 321.
+Package pdftex.def Info: GM_Histogram_of_zero_run_length_for_given_data.png  used on input line 324.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
-<GM_Histogram_of_zero_run_length_for_generated_data.png, id=56, 462.528pt x 346.896pt>
+<GM_Histogram_of_zero_run_length_for_generated_data.png, id=57, 462.528pt x 346.896pt>
 File: GM_Histogram_of_zero_run_length_for_generated_data.png Graphic file (type png)
 <use GM_Histogram_of_zero_run_length_for_generated_data.png>
-Package pdftex.def Info: GM_Histogram_of_zero_run_length_for_generated_data.png  used on input line 326.
+Package pdftex.def Info: GM_Histogram_of_zero_run_length_for_generated_data.png  used on input line 329.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
-<GM_Histogram_of_one_run_length_for_given_data.png, id=57, 462.528pt x 346.896pt>
+<GM_Histogram_of_one_run_length_for_given_data.png, id=58, 462.528pt x 346.896pt>
 File: GM_Histogram_of_one_run_length_for_given_data.png Graphic file (type png)
 <use GM_Histogram_of_one_run_length_for_given_data.png>
-Package pdftex.def Info: GM_Histogram_of_one_run_length_for_given_data.png  used on input line 334.
+Package pdftex.def Info: GM_Histogram_of_one_run_length_for_given_data.png  used on input line 337.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
-<GM_Histogram_of_one_run_length_for_generated_data.png, id=58, 462.528pt x 346.896pt>
+<GM_Histogram_of_one_run_length_for_generated_data.png, id=59, 462.528pt x 346.896pt>
 File: GM_Histogram_of_one_run_length_for_generated_data.png Graphic file (type png)
 <use GM_Histogram_of_one_run_length_for_generated_data.png>
-Package pdftex.def Info: GM_Histogram_of_one_run_length_for_generated_data.png  used on input line 339.
+Package pdftex.def Info: GM_Histogram_of_one_run_length_for_generated_data.png  used on input line 342.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
-<GM_packet_loss_run_length_possibility_density.png, id=59, 462.528pt x 346.896pt>
+<GM_packet_loss_run_length_possibility_density.png, id=60, 462.528pt x 346.896pt>
 File: GM_packet_loss_run_length_possibility_density.png Graphic file (type png)
 <use GM_packet_loss_run_length_possibility_density.png>
-Package pdftex.def Info: GM_packet_loss_run_length_possibility_density.png  used on input line 347.
+Package pdftex.def Info: GM_packet_loss_run_length_possibility_density.png  used on input line 350.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
  [6
 
@@ -561,30 +557,26 @@ Package pdftex.def Info: GM_packet_loss_run_length_possibility_density.png  used
 <GM_PSD_of_run_length_for_given_data.png, id=64, 462.528pt x 346.896pt>
 File: GM_PSD_of_run_length_for_given_data.png Graphic file (type png)
 <use GM_PSD_of_run_length_for_given_data.png>
-Package pdftex.def Info: GM_PSD_of_run_length_for_given_data.png  used on input line 360.
+Package pdftex.def Info: GM_PSD_of_run_length_for_given_data.png  used on input line 363.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
 <GM_PSD_of_run_length_for_generated_data.png, id=65, 462.528pt x 346.896pt>
 File: GM_PSD_of_run_length_for_generated_data.png Graphic file (type png)
 <use GM_PSD_of_run_length_for_generated_data.png>
-Package pdftex.def Info: GM_PSD_of_run_length_for_generated_data.png  used on input line 365.
+Package pdftex.def Info: GM_PSD_of_run_length_for_generated_data.png  used on input line 368.
 (pdftex.def)             Requested size: 170.71652pt x 128.0372pt.
  [7 <./GM_Histogram_of_zero_run_length_for_given_data.png> <./GM_Histogram_of_zero_run_length_for_generated_data.png> <./GM_Histogram_of_one_run_length_for_given_data.png> <./GM_Histogram_of_one_run_length_for_generated_data.png>] [8 <./GM_packet_loss_run_length_possibility_density.png> <./GM_PSD_of_run_length_for_given_data.png> <./GM_PSD_of_run_length_for_generated_data.png>] [9
 
-] [10] [11] [12] [13] [14] [15] [16] [17] (./Zhipeng Ye.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] [10] [11] [12] [13] [14] [15] [16] [17] (./Zhipeng Ye.aux) ) 
 Here is how much of TeX's memory you used:
- 17165 strings out of 492616
- 336903 string characters out of 6129481
- 746070 words of memory out of 5000000
- 20761 multiletter control sequences out of 15000+600000
+ 17166 strings out of 492616
+ 336921 string characters out of 6129481
+ 746876 words of memory out of 5000000
+ 20762 multiletter control sequences out of 15000+600000
  13906 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,18n,84p,545b,1718s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Zhipeng Ye.pdf" (17 pages, 519622 bytes).
+Output written on "Zhipeng Ye.pdf" (17 pages, 517354 bytes).
 PDF statistics:
  165 PDF objects out of 1000 (max. 8388607)
  97 compressed objects within 1 object stream
